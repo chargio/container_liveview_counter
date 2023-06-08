@@ -45,9 +45,9 @@ defmodule LiveViewCounter.MixProject do
       {:phoenix, "~> 1.7.2"},
       {:phoenix_html, "~> 3.3"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 0.18.16"},
+      {:phoenix_live_view, "~> 0.19.1"},
       {:floki, ">= 0.30.0", only: :test},
-      {:phoenix_live_dashboard, "~> 0.7.2"},
+      {:phoenix_live_dashboard, "~> 0.8.0"},
       {:esbuild, "~> 0.7", runtime: Mix.env() == :dev},
       {:tailwind, "~> 0.2.0", runtime: Mix.env() == :dev},
       {:swoosh, "~> 1.3"},
@@ -59,7 +59,7 @@ defmodule LiveViewCounter.MixProject do
       {:plug_cowboy, "~> 2.5"},
 
       # Test Code Coverage:
-      {:excoveralls, "~> 0.15.0", only: :test}
+      {:excoveralls, "~> 0.16.0", only: :test}
     ]
   end
 
