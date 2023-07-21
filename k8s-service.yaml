@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: counter
+spec:
+  ports:
+  - name: 4000-elixir
+    port: 4000
+    protocol: TCP
+    targetPort: 4000
+  selector:
+    app: counter-deployment
+  type: LoadBalancer
+
