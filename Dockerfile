@@ -11,9 +11,9 @@
 #   - https://pkgs.org/ - resource for finding needed packages
 #   - Ex: hexpm/elixir:1.15.3-erlang-26.0.2-debian-bullseye-20230612-slim
 #
-ARG ELIXIR_VERSION=1.15.3
+ARG ELIXIR_VERSION=1.15.4
 ARG OTP_VERSION=26.0.2
-ARG DEBIAN_VERSION=bullseye-20230612-slim
+ARG DEBIAN_VERSION=bookworm-20230612-slim
 
 ARG BUILDER_IMAGE="hexpm/elixir:${ELIXIR_VERSION}-erlang-${OTP_VERSION}-debian-${DEBIAN_VERSION}"
 ARG RUNNER_IMAGE="debian:${DEBIAN_VERSION}"
@@ -33,6 +33,7 @@ RUN mix local.hex --force && \
 
 # set build ENV
 ENV MIX_ENV="prod"
+ENV ERL_FLAGS="+JPperf true"
 
 # install mix dependencies
 COPY mix.exs mix.lock ./
